@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — Görücü</title>
+<meta name="description" content="Görücü uygulamasının kişisel verileri işleme ve koruma esaslarını açıklayan gizlilik politikası.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBF7F2;
+    --surface:#FFFFFF;
+    --ink:#2A2320;
+    --muted:#6B5F58;
+    --faint:#8A7E76;
+    --accent:#9C4350;       /* claret — görücü/eş bulma temasına bağlı sıcak vurgu */
+    --accent-soft:#F3E6E4;
+    --gold:#B8895A;
+    --line:#E8DFD6;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---- Üst başlık ---- */
+  header.masthead{
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(120% 140% at 100% 0%, var(--accent-soft) 0%, transparent 55%),
+      var(--bg);
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .masthead .wrap{padding-top:64px;padding-bottom:56px}
+  .eyebrow{
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin:0 0 18px
+  }
+  .eyebrow::before{content:"❦";margin-right:10px;color:var(--gold)}
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:500;font-size:clamp(34px,6vw,52px);
+    line-height:1.08;margin:0 0 16px;letter-spacing:-.01em
+  }
+  .lede{color:var(--muted);font-size:18px;margin:0;max-width:60ch}
+  .meta{
+    margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 22px;
+    font-size:14px;color:var(--faint)
+  }
+  .meta b{color:var(--ink);font-weight:500}
+
+  /* ---- Doldurulacak alanlar uyarısı ---- */
+  .notice{
+    max-width:var(--maxw);margin:32px auto 0;padding:0 24px;
+  }
+  .notice-card{
+    background:var(--surface);border:1px solid var(--line);
+    border-left:3px solid var(--gold);border-radius:10px;
+    padding:18px 22px;font-size:15px;color:var(--muted)
+  }
+  .notice-card b{color:var(--ink)}
+  .ph{
+    background:var(--accent-soft);color:var(--accent);
+    padding:1px 6px;border-radius:4px;font-weight:600;
+    font-size:.92em;white-space:nowrap
+  }
+
+  /* ---- İçindekiler ---- */
+  nav.toc{max-width:var(--maxw);margin:40px auto 0;padding:0 24px}
+  nav.toc h2{
+    font-family:"Inter";font-size:13px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);font-weight:600;
+    margin:0 0 14px
+  }
+  nav.toc ol{
+    list-style:none;margin:0;padding:0;
+    display:grid;grid-template-columns:1fr 1fr;gap:2px 28px;
+    counter-reset:toc
+  }
+  nav.toc li{counter-increment:toc}
+  nav.toc a{
+    display:flex;gap:12px;align-items:baseline;
+    padding:7px 0;color:var(--ink);font-size:15.5px;
+    border-bottom:1px solid transparent
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    color:var(--accent);font-family:"Fraunces",serif;
+    font-size:13px;font-weight:600;min-width:24px
+  }
+  nav.toc a:hover{text-decoration:none;color:var(--accent)}
+
+  /* ---- Bölümler ---- */
+  main{max-width:var(--maxw);margin:0 auto;padding:8px 24px 80px}
+  section{padding-top:52px;scroll-margin-top:24px;counter-increment:sec}
+  section h2{
+    font-family:"Fraunces",Georgia,serif;font-weight:500;
+    font-size:clamp(23px,4vw,30px);line-height:1.2;
+    margin:0 0 18px;letter-spacing:-.01em;
+    display:flex;gap:16px;align-items:baseline
+  }
+  section h2::before{
+    content:counter(sec,decimal-leading-zero);
+    font-size:15px;color:var(--accent);font-weight:600;
+    border:1px solid var(--accent-soft);background:var(--surface);
+    border-radius:6px;padding:3px 8px;line-height:1;
+    position:relative;top:-2px;flex:none
+  }
+  main{counter-reset:sec}
+  section h3{
+    font-family:"Inter";font-weight:600;font-size:17px;
+    margin:28px 0 8px;color:var(--ink)
+  }
+  p{margin:0 0 16px;color:#3A322D}
+  ul{margin:0 0 16px;padding-left:0;list-style:none}
+  li.item{
+    position:relative;padding:6px 0 6px 26px;color:#3A322D
+  }
+  li.item::before{
+    content:"";position:absolute;left:4px;top:15px;
+    width:6px;height:6px;border-radius:50%;
+    background:var(--accent);opacity:.55
+  }
+  li.item b{color:var(--ink);font-weight:600}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:12px;padding:20px 24px;margin:8px 0 16px
+  }
+  .callout.warn{border-left:3px solid var(--accent)}
+  .callout p:last-child{margin-bottom:0}
+
+  hr.rule{border:0;border-top:1px solid var(--line);margin:0}
+
+  /* ---- Alt bilgi ---- */
+  footer{
+    border-top:1px solid var(--line);
+    background:var(--surface)
+  }
+  footer .wrap{padding:40px 24px;text-align:center}
+  footer .mark{
+    font-family:"Fraunces",serif;font-size:22px;color:var(--ink);
+    margin:0 0 6px
+  }
+  footer .mark span{color:var(--accent)}
+  footer p{color:var(--faint);font-size:14px;margin:4px 0}
+
+  @media (max-width:600px){
+    body{font-size:16px}
+    nav.toc ol{grid-template-columns:1fr}
+    .masthead .wrap{padding-top:48px;padding-bottom:40px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Gizlilik Politikası</p>
+    <h1>Görücü’de verileriniz<br>emanettir.</h1>
+    <p class="lede">Bu politika, Görücü uygulamasını kullandığınızda hangi kişisel verilerinizin işlendiğini, neden işlendiğini ve bu veriler üzerindeki haklarınızı açıklar.</p>
+    <div class="meta">
+      <span><b>Yürürlük tarihi:</b> <span class="ph">[GG.AA.YYYY]</span></span>
+      <span><b>Son güncelleme:</b> <span class="ph">[GG.AA.YYYY]</span></span>
+      <span><b>Sürüm:</b> 1.0</span>
+    </div>
+  </div>
+</header>
+
+<div class="notice">
+  <div class="notice-card">
+    <b>Doldurman gereken alanlar:</b> Bu sayfadaki <span class="ph">[köşeli parantezli]</span> kısımları kendi bilgilerinle değiştir (şirket/geliştirici adı, adres, e-posta, tarih, kullandığın üçüncü taraf servisler). Bu metin bir taslaktır; yayına almadan önce bir hukuk danışmanına gözden geçirtmeni öneririm.
+  </div>
+</div>
+
+<nav class="toc">
+  <h2>İçindekiler</h2>
+  <ol>
+    <li><a href="#veri-sorumlusu">Veri Sorumlusu</a></li>
+    <li><a href="#toplanan-veriler">Toplanan Kişisel Veriler</a></li>
+    <li><a href="#ozel-nitelikli">Özel Nitelikli Veriler</a></li>
+    <li><a href="#amaclar">İşleme Amaçları</a></li>
+    <li><a href="#hukuki-sebep">Hukuki Sebepler</a></li>
+    <li><a href="#yapay-zeka">Yapay Zekâ ve Eşleştirme</a></li>
+    <li><a href="#aktarim">Verilerin Aktarılması</a></li>
+    <li><a href="#ucuncu-taraf">Üçüncü Taraf Servisler</a></li>
+    <li><a href="#saklama">Saklama Süresi</a></li>
+    <li><a href="#guvenlik">Veri Güvenliği</a></li>
+    <li><a href="#haklariniz">KVKK Kapsamındaki Haklarınız</a></li>
+    <li><a href="#cocuklar">Çocukların Gizliliği</a></li>
+    <li><a href="#degisiklikler">Politika Değişiklikleri</a></li>
+    <li><a href="#iletisim">İletişim</a></li>
+  </ol>
+</nav>
+
+<main>
+
+  <section id="veri-sorumlusu">
+    <h2>Veri Sorumlusu</h2>
+    <p>Görücü uygulaması (“Uygulama”, “biz”), kişisel verilerinizi 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) kapsamında veri sorumlusu sıfatıyla işler.</p>
+    <ul>
+      <li class="item"><b>Geliştirici / Şirket:</b> Codex Apps</li>
+      <li class="item"><b>Adres:</b> <span class="ph">[Açık adres]</span></li>
+      <li class="item"><b>E-posta:</b> <a href="mailto:aliaydin0841@gmail.com">aliaydin0841@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <section id="toplanan-veriler">
+    <h2>Toplanan Kişisel Veriler</h2>
+    <p>Uygulamayı kullanırken aşağıdaki verileri sizden, cihazınızdan veya kullanım davranışınızdan toplayabiliriz:</p>
+    <h3>Profil ve hesap bilgileri</h3>
+    <ul>
+      <li class="item">Ad-soyad veya kullanıcı adı, doğum tarihi/yaş, cinsiyet</li>
+      <li class="item">E-posta adresi ve/veya telefon numarası</li>
+      <li class="item">Profil fotoğrafları ve yüklediğiniz görseller</li>
+      <li class="item">Şehir/konum tercihi, eğitim, meslek gibi profil alanları</li>
+      <li class="item">Eş tercihleri ve eşleştirme için belirttiğiniz kriterler</li>
+    </ul>
+    <h3>Etkileşim ve içerik verileri</h3>
+    <ul>
+      <li class="item">Uygulama içi mesajlar, beğeniler, eşleşmeler ve görüşme talepleri</li>
+      <li class="item">Yapay zekâ aracısına ilettiğiniz metinler ve tercihler</li>
+    </ul>
+    <h3>Teknik ve kullanım verileri</h3>
+    <ul>
+      <li class="item">Cihaz modeli, işletim sistemi, uygulama sürümü, dil ayarı</li>
+      <li class="item">IP adresi, yaklaşık konum, çökme kayıtları ve kullanım istatistikleri</li>
+      <li class="item">Bildirim tokenları (push notification için)</li>
+    </ul>
+  </section>
+
+  <section id="ozel-nitelikli">
+    <h2>Özel Nitelikli Veriler</h2>
+    <div class="callout warn">
+      <p>Görücü usulü bir eşleştirme hizmeti olarak; din, mezhep, etnik köken veya benzer tercihler gibi <b>özel nitelikli kişisel verileri</b> yalnızca siz bunları profilinizde paylaşmayı seçtiğinizde işleriz.</p>
+      <p>Bu tür verileri ancak <b>açık rızanıza</b> dayanarak işleriz. Rızanızı dilediğiniz zaman geri çekebilirsiniz; geri çektiğinizde ilgili veriler işlenmeyi durdurur.</p>
+    </div>
+  </section>
+
+  <section id="amaclar">
+    <h2>İşleme Amaçları</h2>
+    <ul>
+      <li class="item">Hesabınızı oluşturmak, doğrulamak ve yönetmek</li>
+      <li class="item">Belirttiğiniz kriterlere göre uygun adaylarla eşleştirme yapmak</li>
+      <li class="item">Yapay zekâ aracılığıyla profil ve eşleşme önerileri sunmak</li>
+      <li class="item">Uygulama içi iletişimi ve bildirimleri sağlamak</li>
+      <li class="item">Güvenliği sağlamak, sahte hesap ve kötüye kullanımı önlemek</li>
+      <li class="item">Hizmeti geliştirmek ve yasal yükümlülükleri yerine getirmek</li>
+    </ul>
+  </section>
+
+  <section id="hukuki-sebep">
+    <h2>Hukuki Sebepler</h2>
+    <p>Kişisel verileriniz KVKK md. 5 ve 6 kapsamında şu sebeplere dayanarak işlenir:</p>
+    <ul>
+      <li class="item"><b>Sözleşmenin kurulması/ifası:</b> Hesap ve eşleştirme hizmetinin sunulması</li>
+      <li class="item"><b>Açık rıza:</b> Özel nitelikli veriler ve isteğe bağlı pazarlama iletileri</li>
+      <li class="item"><b>Meşru menfaat:</b> Güvenlik, dolandırıcılık önleme ve hizmet iyileştirme</li>
+      <li class="item"><b>Hukuki yükümlülük:</b> İlgili mevzuatın gerektirdiği saklama ve raporlama</li>
+    </ul>
+  </section>
+
+  <section id="yapay-zeka">
+    <h2>Yapay Zekâ ve Eşleştirme</h2>
+    <p>Görücü, eşleştirme önerileri ve görücü aracılığı için yapay zekâ modelleri kullanır. Bu süreçte profilinizde ve tercihlerinizde paylaştığınız bilgiler işlenir.</p>
+    <ul>
+      <li class="item">Yapay zekâ önerileri tavsiye niteliğindedir; nihai kararı her zaman siz verirsiniz.</li>
+      <li class="item">Yapay zekâ işleme için <span class="ph">[kullandığın AI sağlayıcısı, ör. Groq / Llama]</span> gibi servis sağlayıcılarından yararlanılabilir.</li>
+      <li class="item">Yalnızca eşleştirme için gerekli asgari veriyi bu servislere iletmeye çalışırız.</li>
+    </ul>
+  </section>
+
+  <section id="aktarim">
+    <h2>Verilerin Aktarılması</h2>
+    <p>Verileriniz, hizmetin sunulabilmesi için aşağıdaki taraflarla, gerekli olduğu ölçüde paylaşılabilir:</p>
+    <ul>
+      <li class="item">Barındırma, veritabanı ve altyapı sağlayıcıları (ör. bulut sunucu hizmetleri)</li>
+      <li class="item">Yapay zekâ ve analiz servis sağlayıcıları</li>
+      <li class="item">Yasal olarak yetkili kamu kurum ve kuruluşları</li>
+    </ul>
+    <p>Yurt dışına yapılan aktarımlar KVKK md. 9’a uygun şekilde ve gerekli güvenceler sağlanarak gerçekleştirilir.</p>
+  </section>
+
+  <section id="ucuncu-taraf">
+    <h2>Üçüncü Taraf Servisler</h2>
+    <p>Uygulama, işlevselliği sağlamak için üçüncü taraf hizmetlerini kullanabilir. Bu hizmetlerin kendi gizlilik politikaları geçerlidir:</p>
+    <ul>
+      <li class="item">Apple App Store / Google Play (dağıtım ve satın alma)</li>
+      <li class="item"><span class="ph">[Analitik aracı, ör. Firebase / Google Analytics]</span></li>
+      <li class="item"><span class="ph">[Bildirim servisi, ör. Firebase Cloud Messaging]</span></li>
+      <li class="item"><span class="ph">[Varsa reklam ağı, ör. AdMob]</span></li>
+    </ul>
+  </section>
+
+  <section id="saklama">
+    <h2>Saklama Süresi</h2>
+    <p>Kişisel verilerinizi yalnızca işleme amacının gerektirdiği süre boyunca ve ilgili mevzuatta öngörülen süreler kadar saklarız. Hesabınızı sildiğinizde, yasal saklama yükümlülükleri saklı kalmak üzere verileriniz makul süre içinde silinir veya anonim hale getirilir.</p>
+  </section>
+
+  <section id="guvenlik">
+    <h2>Veri Güvenliği</h2>
+    <p>Verilerinizi yetkisiz erişime karşı korumak için aktarımda ve depolamada şifreleme, erişim kontrolü ve düzenli güvenlik gözden geçirmeleri gibi idari ve teknik tedbirler uygularız. Hiçbir sistem %100 güvenli olmasa da, verilerinizi korumak için makul önlemleri almaya devam ederiz.</p>
+  </section>
+
+  <section id="haklariniz">
+    <h2>KVKK Kapsamındaki Haklarınız</h2>
+    <p>KVKK md. 11 uyarınca şu haklara sahipsiniz:</p>
+    <ul>
+      <li class="item">Kişisel verilerinizin işlenip işlenmediğini öğrenme ve buna ilişkin bilgi talep etme</li>
+      <li class="item">İşlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme</li>
+      <li class="item">Eksik veya yanlış işlenen verilerin düzeltilmesini isteme</li>
+      <li class="item">Verilerin silinmesini veya yok edilmesini isteme</li>
+      <li class="item">Aktarıldığı üçüncü kişileri öğrenme ve işleme itiraz etme</li>
+      <li class="item">Kanuna aykırı işleme nedeniyle zararın giderilmesini talep etme</li>
+    </ul>
+    <p>Bu haklarınızı kullanmak için <a href="mailto:aliaydin0841@gmail.com">aliaydin0841@gmail.com</a> adresine başvurabilirsiniz. Talepleriniz en geç 30 gün içinde sonuçlandırılır.</p>
+  </section>
+
+  <section id="cocuklar">
+    <h2>Çocukların Gizliliği</h2>
+    <p>Görücü yalnızca 18 yaş ve üzeri kullanıcılar içindir. 18 yaşından küçük kişilerden bilerek veri toplamayız. Böyle bir verinin toplandığını fark edersek ilgili hesabı ve verileri sileriz.</p>
+  </section>
+
+  <section id="degisiklikler">
+    <h2>Politika Değişiklikleri</h2>
+    <p>Bu gizlilik politikasını zaman zaman güncelleyebiliriz. Önemli değişikliklerde uygulama içinden veya bu sayfada güncel tarih ile sizi bilgilendiririz. Değişikliklerden sonra uygulamayı kullanmaya devam etmeniz, güncel politikayı kabul ettiğiniz anlamına gelir.</p>
+  </section>
+
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <p>Gizlilik politikamızla veya verilerinizin işlenmesiyle ilgili her türlü soru ve talebiniz için bize ulaşabilirsiniz:</p>
+    <div class="callout">
+      <ul style="margin:0">
+        <li class="item"><b>E-posta:</b> <a href="mailto:aliaydin0841@gmail.com">aliaydin0841@gmail.com</a></li>
+        <li class="item"><b>Adres:</b> <span class="ph">[Açık adres]</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="mark">Görü<span>cü</span></p>
+    <p>Görücü usulü, dijital güvenle.</p>
+    <p>© <span id="yil"></span> Codex Apps. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yil').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
